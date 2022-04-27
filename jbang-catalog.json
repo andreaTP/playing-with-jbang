@@ -1,0 +1,9 @@
+{
+  "catalogs": {},
+  "aliases": {
+    "k8gen": {
+      "script-ref": "https://oss.sonatype.org/content/repositories/snapshots/io/fabric8/java-generator-cli/6.0-SNAPSHOT/java-generator-cli-6.0-20220207.143845-1.jar"
+    }
+  },
+  "templates": {}
+}

@@ -4,10 +4,3 @@
 //DEPS org.projectlombok:lombok:1.18.24
 //DEPS io.sundr:builder-annotations:0.90.4
 //DEPS javax.validation:validation-api:2.0.1.Final
-//SOURCES src/**.java
-public class Main {
-
-    public static void main(String... args) {
-        System.out.println("Hello");
-    }
-}
