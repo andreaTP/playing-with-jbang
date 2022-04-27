@@ -3,3 +3,5 @@ java-gen.sh
 
 src
 Main.jar
+
+.DS_Store
