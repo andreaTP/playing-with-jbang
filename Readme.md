@@ -1,4 +1,11 @@
 
+Build `jbang` from this branch:
+https://github.com/andreaTP/jbang/tree/build-jar-no-main
+
+In this folder:
+```
+tar -xvf .../jbang/build/distributions/jbang.tar
+```
 
 Start an interactive shell with Crontab:
 ```
