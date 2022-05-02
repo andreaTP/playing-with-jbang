@@ -17,7 +17,8 @@ EOM
 
 TMP_DIR=$(mktemp -d -t $CRD_NAME)
 
-wget ${CRD} -O $TMP_DIR/$CRD_NAME.yaml
+curl -sL ${CRD} > $TMP_DIR/$CRD_NAME.yaml
+# wget ${CRD} -O $TMP_DIR/$CRD_NAME.yaml
 mkdir -p $TMP_DIR/src
 
 jbang --repos=$REPOS --insecure io.fabric8:java-generator-cli:6.0-SNAPSHOT --add-extra-annotations=true --source=$TMP_DIR/$CRD_NAME.yaml --target=$TMP_DIR/src
