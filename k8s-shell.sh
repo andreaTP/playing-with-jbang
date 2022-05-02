@@ -34,7 +34,7 @@ echo "$DEPENDENCIES" > $TMP_DIR/$CRD_NAME.jsh
 
 (
   cd $TMP_DIR
-  bash -c "jbang --class-path $TMP_DIR/$CRD_NAME.jar -i $TMP_DIR/$CRD_NAME.jsh"
+  jbang --class-path $TMP_DIR/$CRD_NAME.jar -i $TMP_DIR/$CRD_NAME.jsh
 )
 
-rm -rf $TMP_DIR
+# rm -rf $TMP_DIR
