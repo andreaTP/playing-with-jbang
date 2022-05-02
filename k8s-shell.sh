@@ -2,7 +2,7 @@
 set -x
 
 CRD=$1
-CRD_NAME=$2
+CRD_NAME="${2:-default}"
 
 REPOS="mavencentral,sonatypeSnapshots=https://oss.sonatype.org/content/repositories/snapshots"
 
