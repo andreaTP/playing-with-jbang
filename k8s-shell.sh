@@ -16,7 +16,8 @@ TMP_DIR=$(mktemp -d -t $CRD_NAME)
 
 wget ${CRD} -O $TMP_DIR/$CRD_NAME.yaml
 mkdir -p $TMP_DIR/src
-jbang --insecure k8s-java-gen --add-extra-annotations=true --source=$TMP_DIR/$CRD_NAME.yaml --target=$TMP_DIR/src
+
+jbang --insecure io.fabric8:java-generator-cli:6.0-SNAPSHOT --add-extra-annotations=true --source=$TMP_DIR/$CRD_NAME.yaml --target=$TMP_DIR/src
 
 cat <<EOF >> $TMP_DIR/$CRD_NAME.java
 $DEPENDENCIES
@@ -34,7 +35,7 @@ echo "$DEPENDENCIES" > $TMP_DIR/$CRD_NAME.jsh
 
 (
   cd $TMP_DIR
-  bash -c "jbang --class-path $TMP_DIR/$CRD_NAME.jar -i $TMP_DIR/$CRD_NAME.jsh"
+  jbang --class-path $TMP_DIR/$CRD_NAME.jar -i $TMP_DIR/$CRD_NAME.jsh
 )
 
 rm -rf $TMP_DIR
