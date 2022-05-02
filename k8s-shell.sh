@@ -15,7 +15,7 @@ read -r -d '' DEPENDENCIES << EOM
 //DEPS javax.validation:validation-api:2.0.1.Final
 EOM
 
-TMP_DIR=$(mktemp -d -t $CRD_NAME)
+TMP_DIR=$(mktemp -d -t $CRD_NAME.XXXXXXX)
 
 curl -sL ${CRD} > $TMP_DIR/$CRD_NAME.yaml
 # wget ${CRD} -O $TMP_DIR/$CRD_NAME.yaml
