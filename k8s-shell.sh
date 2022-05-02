@@ -19,12 +19,8 @@ mkdir -p $TMP_DIR/src
 
 jbang --insecure io.fabric8:java-generator-cli:6.0-SNAPSHOT --add-extra-annotations=true --source=$TMP_DIR/$CRD_NAME.yaml --target=$TMP_DIR/src
 
-cat <<EOF >> $TMP_DIR/$CRD_NAME.java
-$DEPENDENCIES
-//SOURCES src/**.java
-
-public class $CRD_NAME {}
-EOF
+echo "$DEPENDENCIES" > $TMP_DIR/$CRD_NAME.java
+echo "//SOURCES src/**.java" >> $TMP_DIR/$CRD_NAME.java
 
 (
   cd $TMP_DIR
