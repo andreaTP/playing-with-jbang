@@ -5,6 +5,7 @@ CRD=$1
 CRD_NAME=$2
 
 read -r -d '' DEPENDENCIES << EOM
+//REPOS mavencentral,sonatypeSnapshots=https://oss.sonatype.org/content/repositories/snapshots
 //DEPS io.fabric8:kubernetes-client:6.0-SNAPSHOT
 //DEPS io.sundr:builder-annotations:0.90.4
 //DEPS org.projectlombok:lombok:1.18.24
