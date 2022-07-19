@@ -4,15 +4,13 @@ set -x
 CRD=$1
 CRD_NAME="${2:-default}"
 
-REPOS="mavencentral,sonatypeSnapshots=https://oss.sonatype.org/content/repositories/snapshots"
-
 # .XXXXXXX makes it cross-compatible Mac/Linux
 TMP_DIR=$(mktemp -d -t $CRD_NAME.XXXXXXX)
 
 curl -sL ${CRD} > $TMP_DIR/$CRD_NAME.yaml
 mkdir -p $TMP_DIR/src
 
-jbang --repos=$REPOS --insecure io.fabric8:java-generator-cli:6.0-SNAPSHOT --add-extra-annotations=true --source=$TMP_DIR/$CRD_NAME.yaml --target=$TMP_DIR/src
+jbang --repos=$REPOS --insecure io.fabric8:java-generator-cli:6.0.0 --add-extra-annotations=true --source=$TMP_DIR/$CRD_NAME.yaml --target=$TMP_DIR/src
 
 cat <<EOF >> $TMP_DIR/$CRD_NAME.java
 //REPOS $REPOS
