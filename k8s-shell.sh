@@ -13,8 +13,7 @@ mkdir -p $TMP_DIR/src
 jbang --repos=$REPOS --insecure io.fabric8:java-generator-cli:6.0.0 --add-extra-annotations=true --source=$TMP_DIR/$CRD_NAME.yaml --target=$TMP_DIR/src
 
 cat <<EOF >> $TMP_DIR/$CRD_NAME.java
-//REPOS $REPOS
-//DEPS io.fabric8:kubernetes-client:6.0-SNAPSHOT
+//DEPS io.fabric8:kubernetes-client:6.0.0
 //DEPS io.sundr:builder-annotations:0.90.4
 //DEPS org.projectlombok:lombok:1.18.24
 //DEPS io.sundr:builder-annotations:0.90.4
