@@ -10,7 +10,7 @@ TMP_DIR=$(mktemp -d -t $CRD_NAME.XXXXXXX)
 curl -sL ${CRD} > $TMP_DIR/$CRD_NAME.yaml
 mkdir -p $TMP_DIR/src
 
-jbang --repos=$REPOS --insecure io.fabric8:java-generator-cli:6.0.0 --add-extra-annotations=true --source=$TMP_DIR/$CRD_NAME.yaml --target=$TMP_DIR/src
+jbang --insecure io.fabric8:java-generator-cli:6.0.0 --add-extra-annotations=true --source=$TMP_DIR/$CRD_NAME.yaml --target=$TMP_DIR/src
 
 cat <<EOF >> $TMP_DIR/$CRD_NAME.java
 //DEPS io.fabric8:kubernetes-client:6.0.0
